@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:sdw2023
+    username: sdw2023
+    password:
+  jpa:
+    show-sql: true
+    open-in-view: false
+    hibernate:
+      ddl-auto: create # validate | update | create | create-drop
+                       # validade: Faz o Hibernate validar as configurações do banco de dados existente.
+                       #           Não faz alterações no banco de dados.
+                       # update: Hibernate faz alterações no banco de dados para garantir que ele esteja
+                       #         sincronizado com as entidades JPA.
+                       #         Adiciona colunas, modifica tabelas e etc. E tenta preservar os dados existentes.
+                       # create: Faz o Hibernate criar o esquema do banco de dados do zero,
+                       #         excluindo quaisquer dados existentes.
+                       #         Se o banco de dados já existir, ele será descartado e recriado.
+                       # create-drop: Semelhante ao "create", mas o banco de dados é descartado por completo.
+    properties:
+      hibernate:
+        format_sql: true
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        trace: false
+        web-allow-others: false
